@@ -1,0 +1,124 @@
+
+<!doctype html>
+<title>Example</title>
+<style>
+  * {
+    box-sizing: border-box; margin:0px; padding: 0px;
+  }
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    margin: 0;
+  }
+  .col-1 {
+    background: #D7E8D4;
+    flex: 1;
+  }
+  .col-2 {
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+  }
+  .content {
+    display: flex;
+    flex-direction: row;
+  }
+  .content > article {
+    flex: 4;
+    min-height: 60vh;
+  }
+  header, footer {
+    background: yellowgreen;
+    height: 20vh;
+  }
+  header, footer, article, nav {
+    padding: 1em;
+  }
+  #container ul{
+    list-style: none;
+  }
+  #container ul li
+  {
+      background-color:gray;
+      width: 150px;
+      border:1px solid white;
+      height: 50px;
+      line-height:50px;
+      text-align: center;
+      float:left;
+      color: white;
+      font:18px;
+      position: relative;
+}
+#container ul li:hover
+{
+    background-color: rgb(28, 131, 228);
+}
+#container ul ul{
+    display: none;
+}
+#container ul li:hover > ul{
+    display: block;}
+#container ul ul ul{
+    margin-left: 150px;
+    top: 0px;
+    position: absolute;
+}
+#container ul
+{
+    margin-bottom: 0px;
+}
+</style>
+<body>
+  <nav class="col-1">Nav</nav>
+  <div id ="container" class="col-2">
+      <header><h1>Image Gallery</h1>
+        <ul>
+            <li>Home</li>
+            <li>View Pictures
+                <ul>
+                    <li>Natures</li>
+                    <li>Flowers
+                        <ul>
+                            <li>
+                                Rose
+                            </li>
+                            <li>
+                                Tulip
+                            </li>
+                            <li>
+                                Sunflower
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Galaxy</li>
+                </ul>
+            </li>
+            <li onclick="FileUpload.html">Upload Pictures</li>
+            <li>About Us</li>
+        </ul>
+    </header>
+    <main class="content">
+            <html>
+                    <head>
+                        <style type="text/css">
+                            .imgStyle
+                            {
+                                width:100px;
+                                height:100px;
+                                border:3px solid grey;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                            <form method="post" enctype="multipart/form-data" action="/">
+                                <input type="file" name="filename" />
+                                <input type="submit" value="Upload"/>
+                            </form>
+                    </body>                         
+    <article></article>
+    </main>
+  	<footer>Copyrightc</footer>
+  </div>
+</body>
